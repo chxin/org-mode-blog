@@ -1,0 +1,754 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-02-04 Tue 17:16 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>CHxin Org-mode Blog</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Xin Cheng" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link id="pagestyle" rel="stylesheet" type="text/css" href="../style/css/org.css" />
+<script src="../style/javascripts/highlight.min.js"></script>
+<link rel="stylesheet" href="../style/javascripts/googlecode.min.css" />
+<script>var hlf=function(){Array.prototype.forEach.call(document.querySelectorAll("pre.src"),function(t){var e;e=t.getAttribute("class"),e=e.replace(/src-(\w+)/,"src-$1 $1"),console.log(e),t.setAttribute("class",e),hljs.highlightBlock(t)})};addEventListener("DOMContentLoaded",hlf);</script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">CHxin Org-mode Blog
+<br />
+<span class="subtitle">Usage of A Clean and Comfort CSS for Org-exported HTML</span>
+</h1>
+<script>
+function swapStyle(css){
+    document.getElementById('pagestyle').setAttribute('href', css);
+}
+</script>
+<div style="margin: 1em auto;">
+  <button onclick="swapStyle('../style/css/org.css')">Customized</button>
+  <button onclick="swapStyle('../style/css/org-default.css')">Default</button>
+  <button onclick="swapStyle('../style/css/normalize.css')">Normal</button>
+</div>
+
+<div class="abstract">
+<p>
+
+</p>
+
+<p>
+This article serves as a complete demonstration for the stylesheet 'org.css', a simple and clean stylesheet for org-exported HTML file. 
+You may switch between the default style provided by Emacs Org mode, i.e., styles specified in the variable <code>org-html-style-default</code> and my customized stylesheet using the button at the top left corner.
+</p>
+
+</div>
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec:introduction">1. Introduction</a></li>
+<li><a href="#sec:motivation">2. Motivation</a></li>
+<li><a href="#sec:setup">3. Setup</a>
+<ul>
+<li><a href="#sec:external-utilities">3.1. External Utilities</a></li>
+<li><a href="#sec:org-templates">3.2. Org Templates</a></li>
+</ul>
+</li>
+<li><a href="#sec:demo">4. Demo</a>
+<ul>
+<li><a href="#org0e5cb60">4.1. <span class="todo TODO">TODO</span> Title with TODO</a></li>
+<li><a href="#org1bb0b38">4.2. <span class="done DONE">DONE</span> Title with DONE</a></li>
+<li><a href="#orga88801e">4.3. <span class="priority">[A]</span> Title with Priority</a></li>
+<li><a href="#org7ee260b">4.4. Title with Tag&#xa0;&#xa0;&#xa0;<span class="tag"><span class="tag0">tag0</span>&#xa0;<span class="tag1">tag1</span></span></a></li>
+<li><a href="#org80a2d24">4.5. Miscellaneous</a></li>
+</ul>
+</li>
+<li><a href="#sec:conclusion">5. Conclusion</a></li>
+<li><a href="#org034b766">6. Credits</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org037b88f" class="outline-2">
+<h2 id="sec:introduction"><span class="section-number-2">1</span> Introduction</h2>
+<div class="outline-text-2" id="text-sec:introduction">
+<blockquote>
+<p>
+
+</p>
+
+<p>
+<a href="http://orgmode.org/">Org mode</a> is for keeping notes<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>, maintaining TODO lists, planning projects,
+and authoring documents with a fast and effective <i>plain-text</i> system<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>
+[<a href="#dominik2003-org">1</a>].
+</p>
+</blockquote>
+
+<p>
+Org mode is similar to <a href="http://daringfireball.net/projects/markdown/syntax">markdown</a> [<a href="#gruber2004-markdown">2</a>], where all editing is done in plain text with some character markups to decorate texts and finally the text file can be exported to some other formats, e.g., HTML.
+The philosophy is that we can concentrate on the contents with as few distraction from the styles as possible, i.e., as easy-to-read and easy-to-write as is feasible.
+However, the original markdown is a markup language used to create web pages, while Org mode provides much richer functionality beyond simple text markup, e.g., a complete <a href="https://en.wikipedia.org/wiki/Getting_Things_Done">Getting Things Done (GTD)</a> system, task timing and reminder, complete system for reproducible research, etc.
+</p>
+
+<p>
+In this article however we only focus on one of its uses, <i>generating HTML pages</i> with a clean and comfort stylesheet.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8d97d72" class="outline-2">
+<h2 id="sec:motivation"><span class="section-number-2">2</span> Motivation</h2>
+<div class="outline-text-2" id="text-sec:motivation">
+<p>
+As a heavy Emacs user, <a href="https://www.google.com/search?q=blogging+with+org+mode">blogging with org mode</a> is a natural choice. 
+I'm keeping notes in org mode, and I may want to publish some of them online. 
+Questions like why not use products like MS OneNote or Google Keep or Wordpress or whatever simply boil down to personal preference.
+</p>
+
+<ol class="org-ol">
+<li>Org file is a simple text file which can be processed efficiently by external programs.</li>
+<li>It has good built-in support from Emacs, and</li>
+<li>can be exported to various formats, <i>TeX</i>, <i>PDF</i> and <i>HTML</i>.</li>
+</ol>
+
+<p>
+Except for some special cases where dedicated styles are needed, say academic papers, the default export styles with simple tweaks usually satisfy my needs. 
+However, the default style provided by org html exporter is simple <i>boring</i>.
+So I decide to tweak the stylesheet a little bit to make it <i>clean</i>, <i>simple</i> and more <i>eye appealing</i>.
+</p>
+
+<p>
+By default, The HTML exporter assigns some <a href="http://orgmode.org/manual/CSS-support.html">special CSS classes</a>
+to appropriate parts of the document and your style specifications may change
+these, in addition to any of the standard classes like for headlines, tables,
+etc.  
+Some other good styles for
+org-exported html can be found on <a href="http://orgmode.org/">http://orgmode.org/</a>,
+<a href="http://doc.norang.ca/org-mode.html">http://doc.norang.ca/org-mode.html</a> and etc.
+Source code of this file is available at <a href="https://github.com/gongzhitaao/orgcss">https://github.com/gongzhitaao/orgcss</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4b2d678" class="outline-2">
+<h2 id="sec:setup"><span class="section-number-2">3</span> Setup</h2>
+<div class="outline-text-2" id="text-sec:setup">
+<p>
+Publishing with org mode can be achieved as simple as a few keystrokes (say
+<kbd>C-c C-e h h</kbd> for html exporting and <kbd>C-c C-e l p</kbd> for pdf
+exporting). 
+</p>
+</div>
+
+<div id="outline-container-org368340a" class="outline-3">
+<h3 id="sec:external-utilities"><span class="section-number-3">3.1</span> External Utilities</h3>
+<div class="outline-text-3" id="text-sec:external-utilities">
+<p>
+Table <a href="#orgdc0a2bc">1</a> list all the external utilities I used for publishing and
+rendering.
+</p>
+
+<table id="orgdc0a2bc" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption class="t-above"><span class="table-number">Table 1:</span> Utilities</caption>
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Utility</th>
+<th scope="col" class="org-left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><a href="https://www.lri.fr/~filliatr/bibtex2html/">bibtex2html</a></td>
+<td class="org-left">Export citations in bib files, if any, to html.</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.mathjax.org/">MathJax</a></td>
+<td class="org-left">Render math equations.</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Here are some notes about the above utility.
+</p>
+
+<ul class="org-ul">
+<li><p>
+<code>bibtex2html</code> is optional if no citation is required.  Citation syntax is <code>\cite{key}</code>, or <code>cite:key</code>. 
+To use this functionality, you need to include the following elisp code in your configuration.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">require</span> '<span class="org-constant">ox-bibtex</span><span class="org-rainbow-delimiters-depth-1">)</span>
+</pre>
+</div>
+
+<p>
+I do not have a better option for HTML bibtex export. 
+I think an ideal solution is pure lisp-based or Javascript-based. 
+The problem with Javascript-based solution is that the back-reference might be difficult to implement.
+</p></li>
+
+<li>I use <a href="https://www.mathjax.org/">MathJax</a> inline rendering for equations despite of its speed. 
+It is said that <a href="http://khan.github.io/KaTeX/">KaTeX</a> loads and renders faster than MathJax, however, the former supports only a subset of \(\LaTeX\) syntax. 
+See the <a href="http://www.intmath.com/cg5/katex-mathjax-comparison.php">comparison</a> between the two. Anyway, I do not have that many equations to show off.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org92baef8" class="outline-3">
+<h3 id="sec:org-templates"><span class="section-number-3">3.2</span> Org Templates</h3>
+<div class="outline-text-3" id="text-sec:org-templates">
+<p>
+The following is my org file template for blogging.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org"><span class="org-org-document-info-keyword">#+TITLE:</span> <span class="org-org-document-title">Article Title Goes Here</span>
+<span class="org-org-meta-line">#+SUBTITLE: Article Sub-Title</span>
+<span class="org-org-meta-line">#+OPTIONS: toc:nil num:3 H:4 ^:nil pri:t</span>
+<span class="org-org-meta-line">#+HTML_HEAD: &lt;link rel="stylesheet" type="text/css" href="org.css"/&gt;</span>
+
+<span class="org-org-block-begin-line">#+BEGIN_abstract</span>
+Article abstract goes here.
+<span class="org-org-block-end-line">#+END_abstract</span>
+
+<span class="org-comment"># now prints out the previously disabled (toc:nil) table of contents.</span>
+<span class="org-org-meta-line">#+TOC: headlines 2</span>
+
+Your content goes here.
+
+<span class="org-comment"># note the ignore tag</span>
+<span class="org-org-level-1">* Refrences                                                          </span><span class="org-org-level-1"><span class="org-org-tag">:ignore:</span></span>
+
+<span class="org-comment"># prints out bibliograph, if any, with bibtex2html.  </span>
+<span class="org-comment"># The first parameter is the bibliograph file name without .bib extension</span>
+<span class="org-comment"># The second is the reference style</span>
+<span class="org-comment"># The rest parameters are parsed to `bibtex2html'.  </span>
+<span class="org-comment"># Refer to the ox-bibtex document for further information.</span>
+
+<span class="org-org-meta-line">#+BIBLIOGRAPHY: ref plain limit:t option:-nokeywords</span>
+
+<span class="org-comment"># This is an automatically generated section if you use footnote.</span>
+<span class="org-org-level-1">* Footnotes</span>
+</pre>
+</div>
+
+<p>
+With all these setup, only one thing is left, i.e., tweaking the styles of
+exported html.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9464d84" class="outline-2">
+<h2 id="sec:demo"><span class="section-number-2">4</span> Demo</h2>
+<div class="outline-text-2" id="text-sec:demo">
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2015-11-09 Mon 14:41&gt;</span></span>
+</p>
+
+<p>
+We use <a href="https://en.wikipedia.org/wiki/Lorem_ipsum">Lorem ipsum</a> text to demonstrate all elements you would expect to see in
+the org-exported HTML pages.  Note however that the <code>.title</code>, <code>.subtitle</code> and
+<code>#postamble</code> element are not included in this section.
+</p>
+</div>
+
+<div id="outline-container-org0e5cb60" class="outline-3">
+<h3 id="org0e5cb60"><span class="section-number-3">4.1</span> <span class="todo TODO">TODO</span> Title with TODO</h3>
+</div>
+
+<div id="outline-container-org1bb0b38" class="outline-3">
+<h3 id="org1bb0b38"><span class="section-number-3">4.2</span> <span class="done DONE">DONE</span> Title with DONE</h3>
+</div>
+
+<div id="outline-container-orga88801e" class="outline-3">
+<h3 id="orga88801e"><span class="section-number-3">4.3</span> <span class="priority">[A]</span> Title with Priority</h3>
+</div>
+
+<div id="outline-container-org7ee260b" class="outline-3">
+<h3 id="org7ee260b"><span class="section-number-3">4.4</span> Title with Tag&#xa0;&#xa0;&#xa0;<span class="tag"><span class="tag0">tag0</span>&#xa0;<span class="tag1">tag1</span></span></h3>
+</div>
+
+<div id="outline-container-org80a2d24" class="outline-3">
+<h3 id="org80a2d24"><span class="section-number-3">4.5</span> Miscellaneous</h3>
+<div class="outline-text-3" id="text-4-5">
+</div>
+<div id="outline-container-org688f9fb" class="outline-4">
+<h4 id="org688f9fb"><span class="section-number-4">4.5.1</span> Table</h4>
+<div class="outline-text-4" id="text-4-5-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption class="t-above"><span class="table-number">Table 2:</span> Table Caption</caption>
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">\(N\)</th>
+<th scope="col" class="org-right">\(N^2\)</th>
+<th scope="col" class="org-right">\(N^3\)</th>
+<th scope="col" class="org-right">\(N^4\)</th>
+<th scope="col" class="org-right">\(\sqrt n\)</th>
+<th scope="col" class="org-right">\(\sqrt[4]N\)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">2</td>
+<td class="org-right">4</td>
+<td class="org-right">8</td>
+<td class="org-right">16</td>
+<td class="org-right">1.4142</td>
+<td class="org-right">1.1892</td>
+</tr>
+
+<tr>
+<td class="org-right">3</td>
+<td class="org-right">9</td>
+<td class="org-right">27</td>
+<td class="org-right">81</td>
+<td class="org-right">1.7321</td>
+<td class="org-right">1.3161</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-orgb23967c" class="outline-4">
+<h4 id="orgb23967c"><span class="section-number-4">4.5.2</span> List</h4>
+<div class="outline-text-4" id="text-4-5-2">
+</div>
+<div id="outline-container-org2be29f1" class="outline-5">
+<h5 id="org2be29f1">The ordered list</h5>
+<div class="outline-text-5" id="text-org2be29f1">
+<ol class="org-ol">
+<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+<li>Donec et massa sit amet ligula maximus feugiat.</li>
+<li>Morbi consequat orci et tincidunt sagittis.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org746ba00" class="outline-5">
+<h5 id="org746ba00">Unordered list</h5>
+<div class="outline-text-5" id="text-org746ba00">
+<ul class="org-ul">
+<li>Aliquam non metus nec elit pellentesque scelerisque.</li>
+<li>In accumsan nunc ac orci varius hendrerit.</li>
+<li>Suspendisse non eros eu nisi finibus maximus.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org726544f" class="outline-5">
+<h5 id="org726544f">Definition list</h5>
+<div class="outline-text-5" id="text-org726544f">
+<dl class="org-dl">
+<dt>Lorem ipsum</dt><dd>dolor sit amet, consectetur adipiscing elit.  Mauris laoreet
+sollicitudin venenatis.  Duis sed consequat dolor.</dd>
+<dt>Etiam feugiat</dt><dd>pharetra sapien et semper.  Nunc ornare lacus sit amet massa
+auctor, vitae aliquam eros interdum.  Mauris arcu ante, imperdiet vel purus
+ac, bibendum faucibus diam.  Ut blandit nec mi at ultricies.  Donec eget
+mattis nisl.  In sed nibh felis.  Cras quis convallis orci.</dd>
+<dt>Sed aliquam</dt><dd>odio sed faucibus aliquam, arcu augue elementum justo, ut
+vulputate ligula sem in augue.  Maecenas ante felis, pellentesque auctor
+semper non, eleifend quis ante.  Fusce enim orci, suscipit ac dapibus et,
+fermentum eu tortor.  Duis in facilisis ante, quis faucibus dolor.  Etiam
+maximus lorem quis accumsan vehicula.</dd>
+</dl>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf0d65ee" class="outline-4">
+<h4 id="orgf0d65ee"><span class="section-number-4">4.5.3</span> Picture</h4>
+<div class="outline-text-4" id="text-4-5-3">
+
+<div class="figure">
+<p><img src="https:/orgmode.org/img/org-mode-unicorn-logo.png" alt="org-mode-unicorn-logo.png" />
+</p>
+<p><span class="figure-number">Figure 1: </span>Demo Picture with Caption</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb95b81c" class="outline-4">
+<h4 id="orgb95b81c"><span class="section-number-4">4.5.4</span> Math</h4>
+<div class="outline-text-4" id="text-4-5-4">
+\begin{align}
+\mathcal{F}(a) &= \frac{1}{2\pi i}\oint_\gamma \frac{f(z)}{z - a}\,dz \\
+\int_D (\nabla\cdot \mathcal{F})\,dV &=\int_{\partial D}\mathcal{F}\cdot n\, dS
+\end{align}
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgeee6b9d" class="outline-2">
+<h2 id="sec:conclusion"><span class="section-number-2">5</span> Conclusion</h2>
+<div class="outline-text-2" id="text-sec:conclusion">
+<p>
+This article essentially demonstrates the stylesheet for org-exported html file without going into details about the publishing process which requires some knowledge about Emacs and org mode.
+There are some dangling issues around the citation with <code>ox-bibtex</code>, to which the simple solution is to use links instead of citations, if possible. 
+Otherwise, hacking some post-processing code is necessary.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org034b766" class="outline-2">
+<h2 id="org034b766"><span class="section-number-2">6</span> Credits</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+Some styles are borrowed from the following projects.
+</p>
+
+<ol class="org-ol">
+<li><a href="https://github.com/fniessen/org-html-themes">fniessen/org-html-themes</a></li>
+<li><a href="https://gist.github.com/mowen/326524">mowen/gist326524</a></li>
+<li><a href="http://demo.thi.ng/org-spec/">org-spec</a></li>
+<li><a href="http://doc.norang.ca/org-mode.html">Organize Your Life In Plain Text!</a></li>
+<li><a href="https://github.com/thomasf/solarized-cs">thomasf/solarized-css</a></li>
+<li><a href="http://orgmode.org/worg/org-web.html">Web Pages Made with Org-Mode</a></li>
+</ol>
+</div>
+</div>
+
+<div id="bibliography">
+<h2>References</h2>
+
+<table>
+
+<tr valign="top">
+<td align="right" class="bibtexnumber">
+[<a name="dominik2003-org">1</a>]
+</td>
+<td class="bibtexitem">
+Carsten Dominik and
+  <a href="http://orgmode.org/org.html#History-and-Acknowledgments">many others</a>.
+ Org mode for Emacs, 2003.
+[&nbsp;<a href="ref_bib.html#dominik2003-org">bib</a>&nbsp;| 
+<a href="http://orgmode.org/">http</a>&nbsp;]
+
+</td>
+</tr>
+
+
+<tr valign="top">
+<td align="right" class="bibtexnumber">
+[<a name="gruber2004-markdown">2</a>]
+</td>
+<td class="bibtexitem">
+John Gruber.
+ Markdown, December 2004.
+[&nbsp;<a href="ref_bib.html#gruber2004-markdown">bib</a>&nbsp;| 
+<a href="http://daringfireball.net/projects/markdown/">http</a>&nbsp;]
+
+</td>
+</tr>
+</table>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+For note keeping, <a href="http://jblevins.org/projects/deft/">Deft</a> with Org mode make a cute couple.
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
+A <a href="http://doc.norang.ca/org-mode.html">great article</a> elaborates on this.
+</p></div></div>
+
+
+</div>
+</div></div>
+<div id="postamble" class="status">
+<p class="author">Author: Xin Cheng</p>
+<p class="date">Created: 2020-02-04 Tue 17:16</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

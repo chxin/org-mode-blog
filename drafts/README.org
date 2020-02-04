@@ -1,0 +1,263 @@
+#+EXPORT_FILE_NAME: ../posts/css-for-org-exported-html.html
+#+TITLE: CHxin Org-mode Blog
+#+SUBTITLE: Usage of A Clean and Comfort CSS for Org-exported HTML
+
+#+HTML_HEAD: <link id="pagestyle" rel="stylesheet" type="text/css" href="../style/css/org.css" />
+
+# code highlight
+#+HTML_HEAD: <script src="../style/javascripts/highlight.min.js"></script>
+#+HTML_HEAD: <link rel="stylesheet" href="../style/javascripts/googlecode.min.css" />
+#+HTML_HEAD: <script>var hlf=function(){Array.prototype.forEach.call(document.querySelectorAll("pre.src"),function(t){var e;e=t.getAttribute("class"),e=e.replace(/src-(\w+)/,"src-$1 $1"),console.log(e),t.setAttribute("class",e),hljs.highlightBlock(t)})};addEventListener("DOMContentLoaded",hlf);</script>
+
+#+OPTIONS: toc:nil num:3 H:4 ^:nil pri:t
+
+#+MACRO: kbd @@html:<kbd>$1</kbd>@@
+
+#+BEGIN_EXPORT html
+<script>
+function swapStyle(css){
+    document.getElementById('pagestyle').setAttribute('href', css);
+}
+</script>
+<div style="margin: 1em auto;">
+  <button onclick="swapStyle('../style/css/org.css')">Customized</button>
+  <button onclick="swapStyle('../style/css/org-default.css')">Default</button>
+  <button onclick="swapStyle('../style/css/normalize.css')">Normal</button>
+</div>
+#+END_EXPORT
+
+#+BEGIN_abstract
+
+This article serves as a complete demonstration for the stylesheet 'org.css', a simple and clean stylesheet for org-exported HTML file. 
+You may switch between the default style provided by Emacs Org mode, i.e., styles specified in the variable =org-html-style-default= and my customized stylesheet using the button at the top left corner.
+
+#+END_abstract
+
+#+TOC: headlines 2
+
+* Introduction
+:PROPERTIES:
+:CUSTOM_ID: sec:introduction
+:END:
+
+#+BEGIN_QUOTE
+
+[[http://orgmode.org/][Org mode]] is for keeping notes[fn:1], maintaining TODO lists, planning projects,
+and authoring documents with a fast and effective /plain-text/ system[fn:2]
+cite:dominik2003-org.
+
+#+END_QUOTE
+
+Org mode is similar to [[http://daringfireball.net/projects/markdown/syntax][markdown]] cite:gruber2004-markdown, where all editing is done in plain text with some character markups to decorate texts and finally the text file can be exported to some other formats, e.g., HTML.
+The philosophy is that we can concentrate on the contents with as few distraction from the styles as possible, i.e., as easy-to-read and easy-to-write as is feasible.
+However, the original markdown is a markup language used to create web pages, while Org mode provides much richer functionality beyond simple text markup, e.g., a complete [[https://en.wikipedia.org/wiki/Getting_Things_Done][Getting Things Done (GTD)]] system, task timing and reminder, complete system for reproducible research, etc.
+
+In this article however we only focus on one of its uses, /generating HTML pages/ with a clean and comfort stylesheet.
+
+* Motivation
+:PROPERTIES:
+:CUSTOM_ID: sec:motivation
+:END:
+
+As a heavy Emacs user, [[https://www.google.com/search?q%3Dblogging%2Bwith%2Borg%2Bmode][blogging with org mode]] is a natural choice. 
+I'm keeping notes in org mode, and I may want to publish some of them online. 
+Questions like why not use products like MS OneNote or Google Keep or Wordpress or whatever simply boil down to personal preference.
+
+1. Org file is a simple text file which can be processed efficiently by external programs.
+2. It has good built-in support from Emacs, and
+3. can be exported to various formats, /TeX/, /PDF/ and /HTML/.  
+
+Except for some special cases where dedicated styles are needed, say academic papers, the default export styles with simple tweaks usually satisfy my needs. 
+However, the default style provided by org html exporter is simple /boring/.
+So I decide to tweak the stylesheet a little bit to make it /clean/, /simple/ and more /eye appealing/.
+
+By default, The HTML exporter assigns some [[http://orgmode.org/manual/CSS-support.html][special CSS classes]]
+to appropriate parts of the document and your style specifications may change
+these, in addition to any of the standard classes like for headlines, tables,
+etc.  
+Some other good styles for
+org-exported html can be found on [[http://orgmode.org/]],
+[[http://doc.norang.ca/org-mode.html]] and etc.
+Source code of this file is available at https://github.com/gongzhitaao/orgcss.
+
+* Setup
+:PROPERTIES:
+:CUSTOM_ID: sec:setup
+:END:
+
+Publishing with org mode can be achieved as simple as a few keystrokes (say
+{{{kbd(C-c C-e h h)}}} for html exporting and {{{kbd(C-c C-e l p)}}} for pdf
+exporting). 
+
+** External Utilities
+:PROPERTIES:
+:CUSTOM_ID: sec:external-utilities
+:END:
+
+Table [[tab:util]] list all the external utilities I used for publishing and
+rendering.
+
+#+CAPTION: Utilities
+#+NAME: tab:util
+| Utility     | Description                                     |
+|-------------+-------------------------------------------------|
+| [[https://www.lri.fr/~filliatr/bibtex2html/][bibtex2html]] | Export citations in bib files, if any, to html. |
+| [[https://www.mathjax.org/][MathJax]]     | Render math equations.                          |
+
+Here are some notes about the above utility.
+
+- ~bibtex2html~ is optional if no citation is required.  Citation syntax is =\cite{key}=, or =cite:key=. 
+  To use this functionality, you need to include the following elisp code in your configuration.
+
+  #+BEGIN_SRC emacs-lisp
+  (require 'ox-bibtex)
+  #+END_SRC
+
+  I do not have a better option for HTML bibtex export. 
+  I think an ideal solution is pure lisp-based or Javascript-based. 
+  The problem with Javascript-based solution is that the back-reference might be difficult to implement.
+
+- I use [[https://www.mathjax.org/][MathJax]] inline rendering for equations despite of its speed. 
+  It is said that [[http://khan.github.io/KaTeX/][KaTeX]] loads and renders faster than MathJax, however, the former supports only a subset of \(\LaTeX\) syntax. 
+  See the [[http://www.intmath.com/cg5/katex-mathjax-comparison.php][comparison]] between the two. Anyway, I do not have that many equations to show off.
+
+** Org Templates
+:PROPERTIES:
+:CUSTOM_ID: sec:org-templates
+:END:
+
+The following is my org file template for blogging.
+
+#+BEGIN_SRC org
+,#+TITLE: Article Title Goes Here
+,#+SUBTITLE: Article Sub-Title
+,#+OPTIONS: toc:nil num:3 H:4 ^:nil pri:t
+,#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="org.css"/>
+
+,#+BEGIN_abstract
+Article abstract goes here.
+,#+END_abstract
+
+# now prints out the previously disabled (toc:nil) table of contents.
+,#+TOC: headlines 2
+
+Your content goes here.
+
+# note the ignore tag
+,* Refrences                                                          :ignore:
+
+# prints out bibliograph, if any, with bibtex2html.  
+# The first parameter is the bibliograph file name without .bib extension
+# The second is the reference style
+# The rest parameters are parsed to `bibtex2html'.  
+# Refer to the ox-bibtex document for further information.
+
+,#+BIBLIOGRAPHY: ref plain limit:t option:-nokeywords
+
+# This is an automatically generated section if you use footnote.
+,* Footnotes
+#+END_SRC
+
+With all these setup, only one thing is left, i.e., tweaking the styles of
+exported html.
+
+* Demo
+:PROPERTIES:
+:CUSTOM_ID: sec:demo
+:END:
+<2015-11-09 Mon 14:41>
+
+We use [[https://en.wikipedia.org/wiki/Lorem_ipsum][Lorem ipsum]] text to demonstrate all elements you would expect to see in
+the org-exported HTML pages.  Note however that the =.title=, =.subtitle= and
+=#postamble= element are not included in this section.
+
+** TODO Title with TODO
+
+** DONE Title with DONE
+
+** [#A] Title with Priority
+
+** Title with Tag                                                 :tag0:tag1:
+
+** Miscellaneous
+
+*** Table
+
+#+CAPTION: Table Caption
+| \(N\) | \(N^2\) | \(N^3\) | \(N^4\) | \(\sqrt n\) | \(\sqrt[4]N\) |
+|-------+---------+---------+---------+-----------+-----------------|
+|     1 |       1 |       1 |       1 |         1 |               1 |
+|     2 |       4 |       8 |      16 |    1.4142 |          1.1892 |
+|     3 |       9 |      27 |      81 |    1.7321 |          1.3161 |
+|-------+---------+---------+---------+-----------+-----------------|
+#+TBLFM: $2=$1^2::$3=$1^3::$4=$1^4::$5=sqrt($1)::$6=sqrt(sqrt(($1)))
+
+*** List
+
+**** The ordered list
+
+1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+2. Donec et massa sit amet ligula maximus feugiat.
+3. Morbi consequat orci et tincidunt sagittis.
+
+**** Unordered list
+
+- Aliquam non metus nec elit pellentesque scelerisque.
+- In accumsan nunc ac orci varius hendrerit.
+- Suspendisse non eros eu nisi finibus maximus.
+
+**** Definition list
+
+- Lorem ipsum :: dolor sit amet, consectetur adipiscing elit.  Mauris laoreet
+     sollicitudin venenatis.  Duis sed consequat dolor.
+- Etiam feugiat :: pharetra sapien et semper.  Nunc ornare lacus sit amet massa
+     auctor, vitae aliquam eros interdum.  Mauris arcu ante, imperdiet vel purus
+     ac, bibendum faucibus diam.  Ut blandit nec mi at ultricies.  Donec eget
+     mattis nisl.  In sed nibh felis.  Cras quis convallis orci.
+- Sed aliquam :: odio sed faucibus aliquam, arcu augue elementum justo, ut
+     vulputate ligula sem in augue.  Maecenas ante felis, pellentesque auctor
+     semper non, eleifend quis ante.  Fusce enim orci, suscipit ac dapibus et,
+     fermentum eu tortor.  Duis in facilisis ante, quis faucibus dolor.  Etiam
+     maximus lorem quis accumsan vehicula.
+
+*** Picture
+
+#+CAPTION: Demo Picture with Caption
+[[file:https:/orgmode.org/img/org-mode-unicorn-logo.png]]
+
+*** Math
+
+\begin{align}
+\mathcal{F}(a) &= \frac{1}{2\pi i}\oint_\gamma \frac{f(z)}{z - a}\,dz \\
+\int_D (\nabla\cdot \mathcal{F})\,dV &=\int_{\partial D}\mathcal{F}\cdot n\, dS
+\end{align}
+
+* Conclusion
+:PROPERTIES:
+:CUSTOM_ID: sec:conclusion
+:END:
+
+This article essentially demonstrates the stylesheet for org-exported html file without going into details about the publishing process which requires some knowledge about Emacs and org mode.
+There are some dangling issues around the citation with =ox-bibtex=, to which the simple solution is to use links instead of citations, if possible. 
+Otherwise, hacking some post-processing code is necessary.
+
+* Credits
+
+Some styles are borrowed from the following projects.
+
+1. [[https://github.com/fniessen/org-html-themes][fniessen/org-html-themes]]
+2. [[https://gist.github.com/mowen/326524][mowen/gist326524]]
+3. [[http://demo.thi.ng/org-spec/][org-spec]]
+4. [[http://doc.norang.ca/org-mode.html][Organize Your Life In Plain Text!]]
+5. [[https://github.com/thomasf/solarized-cs][thomasf/solarized-css]]
+6. [[http://orgmode.org/worg/org-web.html][Web Pages Made with Org-Mode]]
+
+* References                                                         :ignore:
+
+#+BIBLIOGRAPHY: ref plain limit:t option:-nokeywords
+
+* Footnotes
+
+[fn:1] For note keeping, [[http://jblevins.org/projects/deft/][Deft]] with Org mode make a cute couple.
+
+[fn:2] A [[http://doc.norang.ca/org-mode.html][great article]] elaborates on this.
