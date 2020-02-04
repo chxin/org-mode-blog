@@ -1,0 +1,53 @@
+* CHxin Org-mode Blog
+[[http://orgmode.org/][Org mode]] is for keeping notes, maintaining TODO lists, planning projects, and authoring documents with a fast and effective /plain-text/ system.
+** Backgroud
+Emacs maintains all my projects, and Org Mode plays the core role in Personal Knowledge Management.
+In the future, Org Mode is regarded as the *supervisor* of my work whose plan, implementation, and result are poured into org files and then exported to website.
+
+This repo aims to valid the feasibility of the org mode notes system exported to html blog.
+** motivation
+As a heavy Emacs user, [[https://www.google.com/search?q%3Dblogging%2Bwith%2Borg%2Bmode][blogging with org mode]] is a natural choice. 
+The blog layout can be customized.
+By default, The HTML exporter assigns some [[http://orgmode.org/manual/CSS-support.html][special CSS classes]]
+to appropriate parts of the document and your style specifications may change
+these, in addition to any of the standard classes like for headlines, tables,
+etc.  
+Some other good styles for
+org-exported html can be found on [[http://orgmode.org/]],
+[[http://doc.norang.ca/org-mode.html]] and etc.
+Source code of the borrowed stylesheet is available at https://github.com/gongzhitaao/orgcss.
+I will improve the layout according my preference.
+
+* Usage
+1. import the [[file:drafts/template.org][template file]]
+2. generate html file by "C-c C-e h o"
+3. update [[file:drafts/index.org][sitemap]]
+4. push to github repo
+
+#+BEGIN_QUOTE
+The usage of citation:
+
+,#+BIBLIOGRAPHY: ref plain limit:t option:-nokeywords
+
+prints out bibliograph, if any, with bibtex2html.  
+if no, comment above statement.
+The first parameter is the bibliograph file name without .bib extension
+The second is the reference style
+The rest parameters are parsed to `bibtex2html'.  
+Refer to the ox-bibtex document for further information.
+#+END_QUOTE
+
+* Sitemap
+** Recent Update
+*** <2020-02-04 Tue> [[file:posts/css-for-org-exported-html.html][CSS for Org-exported HTML]]                      :org:css:
+
+** Mac Workflow
+*** TODO Org Mode
+   
+*** SCHEDULE Emacs
+
+*** DONE Latex
+   
+** Hardware
+
+** Software
