@@ -1,0 +1,33 @@
+#+EXPORT_FILE_NAME: ../index.html
+#+TITLE: CHxin Org-mode Blog
+#+SUBTITLE: HomePage
+#+OPTIONS: toc:nil num:3 H:4 ^:nil pri:t
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="./style/css/org.css"/>
+
+#+BEGIN_abstract
+
+[[http://orgmode.org/][Org mode]] is for keeping notes, maintaining TODO lists, planning projects, and authoring documents with a fast and effective /plain-text/ system.
+
+Emacs maintains all my projects, and Org Mode plays the core role in Personal Knowledge Management.
+In the future, Org Mode is regarded as the *supervisor* of my work whose plan, implementation, and result are poured into org files and then exported to website.
+
+This repo aims to valid the feasibility of the org mode notes system exported to html blog.
+
+#+END_abstract
+
+# #+TOC: headlines 2
+* Recent Update
+** <2020-02-04 Tue> [[file:posts/css-for-org-exported-html.html][CSS for Org-exported HTML]]                       :org:css:
+
+* Mac Workflow
+** TODO Org Mode
+   
+** SCHEDULE Emacs
+
+** DONE Latex
+   
+* Hardware
+
+* Software
+
+* Refrences                                                          :ignore:
