@@ -1,33 +1,41 @@
 #+EXPORT_FILE_NAME: ../index.html
-#+TITLE: CHxin Org-mode Blog
-#+SUBTITLE: HomePage
-#+OPTIONS: toc:nil num:3 H:4 ^:nil pri:t
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="./style/css/org.css"/>
+#+TITLE: CHxin Blog
+#+SUBTITLE: HomePage: A pure site based on org mode.
+#+OPTIONS: toc:nil H:4 ^:nil pri:t num:nil
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="./style/css/org-index.css"/>
 
 #+BEGIN_abstract
 
-[[http://orgmode.org/][Org mode]] is for keeping notes, maintaining TODO lists, planning projects, and authoring documents with a fast and effective /plain-text/ system.
-
-Emacs maintains all my projects, and Org Mode plays the core role in Personal Knowledge Management.
-In the future, Org Mode is regarded as the *supervisor* of my work whose plan, implementation, and result are poured into org files and then exported to website.
-
-This repo aims to valid the feasibility of the org mode notes system exported to html blog.
+This repo aims to validate the feasibility of the [[http://spacemacs.org/][Emacs]] & [[http://orgmode.org/][Org Mode]] for keeping notes, maintaining TODO lists, planning projects, and authoring documents with a fast and effective /plain-text/ system.
 
 #+END_abstract
 
 # #+TOC: headlines 2
 * Recent Update
-** <2020-02-04 Tue> [[file:posts/css-for-org-exported-html.html][CSS for Org-exported HTML]]                       :org:css:
+*** <2020-02-04 Tue> [[file:posts/css-for-org-exported-html.html][CSS for Org-exported HTML]] :org:css:
 
-* Mac Workflow
+* Workflow
+  Emacs maintains all my projects, and Org Mode plays the core role in Personal Knowledge Management.
+  The configurations for the workflow are listed here as well as my personal optimization.
+
 ** TODO Org Mode
-   
+*** <2020-02-04 Tue> [[file:posts/css-for-org-exported-html.html][CSS for Org-exported HTML]] :org:css:
 ** SCHEDULE Emacs
 
 ** DONE Latex
-   
+
+** DONE Literature Reading
+   CLOSED: [2020-03-30 Mon 09:05]
+
 * Hardware
 
 * Software
 
-* Refrences                                                          :ignore:
+* About Me
+
+Org Mode is regarded as the *supervisor* of my daily work.
+
+The work plan, implementation, and results are poured into org files where I select some interesting findings to export as html to github pages.
+Here comes this website.
+
+Find more about me here: [[https://github.com/chxin][github]]
